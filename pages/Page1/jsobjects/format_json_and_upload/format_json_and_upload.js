@@ -1,39 +1,59 @@
 export default {
     transform: async () => {
-      const filesData = FilePicker1.files[0].data;
-				
-        // Map and process the data concurrently
-        const processedData = await Promise.all(filesData.map(async (u) => {
-            // Create the processed object directly
-            const processedObject = Object.fromEntries(
-                Object.entries(u).map(([key, value]) => {
-                    // Process string values
-                    if (typeof value === 'string') {
-                        // Remove single quotes
-                        value = value.replace(/'/g, '');
+        try {
+            const filesData = FilePicker1.files[0].data;
 
-                        // Check if it's a date in "dd/MM/yyyy" format and reformat if valid
-                        if (moment(value, 'DD/MM/YYYY', true).isValid()) {
-                            value = moment(value, 'DD/MM/YYYY').format('YYYY-MM-DD'); // ISO format
+            // Ensure filesData is an array
+            if (!Array.isArray(filesData)) {
+                throw new Error("Invalid data format: filesData should be an array");
+            }
+
+            // Process data concurrently
+            const processedData = await Promise.all(filesData.map(async (u) => {
+                // Process object properties
+                const processedObject = Object.fromEntries(
+                    Object.entries(u).map(([key, value]) => {
+                        if (typeof value === 'string') {
+                            value = value.replace(/'/g, '');
+
+                            // Date validation and formatting
+                            if (moment(value, 'DD/MM/YYYY', true).isValid()) {
+                                value = moment(value, 'DD/MM/YYYY').format('YYYY-MM-DD');
+                            }
                         }
-                    }
+                        return [key, value];
+                    })
+                );
 
-                    // Return the updated key-value pair
-                    return [key, value];
-                })
-            );
+                // Insert data with error handling
+                try {
+                    await insert_data.run(processedObject);
+                    console.log("Successfully inserted", processedObject);
+                } catch (e) {
+									// showAlert(`insertError for ${processedObject}`, insertError)
+                    console.error("Insert failed for:", processedObject, e);
+                    //throw insertError; // Throw error to exit if insert fails
+                }
 
-            // Run insert_data for each processedObject
-            return insert_data.run(processedObject).then(() => {
-                console.log("Inserting", processedObject);
                 return processedObject;
-            });
-        }));
+            }));
 
-        // Execute read db after processing all inserts
-        await Select_public_app1.run();
-        showAlert("Upload finished!");
+            // Execute read db after processing all inserts
+					try{
+            await Select_public_app1.run();
+            showAlert("Upload finished!");
+					}catch(e){
+						console.log("test",e)
+						await read_db.data
+					}
 
-        return processedData;
+            return processedData;
+
+        } catch (e) {
+            console.error("Error in transform function:", e);
+            showAlert("An error occurred during upload.", "error");
+						await Select_public_app1.run();
+            return [];
+        }
     }
 };

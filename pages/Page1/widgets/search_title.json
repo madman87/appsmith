@@ -15,7 +15,11 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -38,6 +42,7 @@
   "mobileRightColumn": 10,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
+  "onTextChanged": "{{filter_by_title.getTable();}}",
   "parentColumnSpace": 16.78125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -50,5 +55,5 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "i0gwywt1y9",
-  "widgetName": "Input1"
+  "widgetName": "search_title"
 }
