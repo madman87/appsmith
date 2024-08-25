@@ -1,0 +1,1 @@
+SELECT COUNT(*) from public.app where title ilike '%{{Table1.searchText}}%';
