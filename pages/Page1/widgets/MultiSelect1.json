@@ -2,12 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 11,
   "boxShadow": "none",
-  "defaultOptionValue": [
-    "GREEN",
-    "RED"
-  ],
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,6 +14,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilterUpdate"
+    }
+  ],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
@@ -25,10 +32,11 @@
   "key": "ur26temlym",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Label",
+  "labelText": "Select Movie Genre",
   "labelTextSize": "0.875rem",
+  "labelTooltip": "Select one or more genres",
   "labelWidth": 5,
-  "leftColumn": 32,
+  "leftColumn": 31,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -37,31 +45,19 @@
   "mobileRightColumn": 52,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
+  "onFilterUpdate": "{{\n            Select_public_app2.run();\n            \n          }}",
+  "optionLabel": "key",
+  "optionValue": "key",
   "parentColumnSpace": 16.78125,
   "parentId": "0",
   "parentRowSpace": 10,
   "placeholderText": "Select option(s)",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 52,
-  "serverSideFiltering": false,
-  "sourceData": [
-    {
-      "code": "BLUE",
-      "name": "Blue"
-    },
-    {
-      "code": "GREEN",
-      "name": "Green"
-    },
-    {
-      "code": "RED",
-      "name": "Red"
-    }
-  ],
-  "topRow": 2,
+  "rightColumn": 51,
+  "serverSideFiltering": true,
+  "sourceData": "[\n  {\n    \"key\": \"Action\"\n  },\n  {\n    \"key\": \"Adventure\"\n  },\n  {\n    \"key\": \"Comedy\"\n  },\n  {\n    \"key\": \"Crime\"\n  },\n  {\n    \"key\": \"Drama\"\n  },\n  {\n    \"key\": \"Fantasy\"\n  },\n  {\n    \"key\": \"Horror\"\n  },\n  {\n    \"key\": \"Romance\"\n  },\n  {\n    \"key\": \"Science Fiction\"\n  },\n  {\n    \"key\": \"Thriller\"\n  },\n  {\n    \"key\": \"Western\"\n  }\n]\n",
+  "topRow": 4,
   "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
   "widgetId": "q502q9qtk6",

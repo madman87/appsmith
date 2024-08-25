@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -19,6 +19,7 @@
       "key": "sourceData"
     }
   ],
+  "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
@@ -27,8 +28,9 @@
   "key": "vmnzulsu0r",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Label",
+  "labelText": "Select Movie Language",
   "labelTextSize": "0.875rem",
+  "labelTooltip": "Select One Movie Language",
   "labelWidth": 5,
   "leftColumn": 11,
   "maxDynamicHeight": 9000,
@@ -39,8 +41,8 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
+  "optionLabel": "key",
+  "optionValue": "key",
   "parentColumnSpace": 16.78125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -49,7 +51,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 31,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\n    \"name\": \"Blue\",\n    \"code\": \"BLUE\"\n  },\n  {\n    \"name\": \"Green\",\n    \"code\": \"GREEN\"\n  },\n  {\n    \"name\": \"Red\",\n    \"code\": \"RED\"\n  }\n]",
+  "sourceData": "[\n{\n    \"key\": \"English\"\n  },\n\t{\n    \"key\": \"French\"\n  },\n\t{\n    \"key\": \"Spanish\"\n  },\n\t{\n    \"key\": \"Xhosa\"\n  },\n\t{\n    \"key\": \"Mandarin\"\n  },\n\t{\n    \"key\": \"Persian\"\n  },\n\t{\n    \"key\": \"German\"\n  },\n\t{\n    \"key\": \"Russian\"\n  },\n\t{\n    \"key\": \"Korean\"\n  },\n\t{\n    \"key\": \"Italian\"\n  }\n]",
   "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,

@@ -1,0 +1,6 @@
+SELECT
+  *
+FROM
+  public.app
+WHERE
+  "genres" ilike '%{{MultiSelect1.filterText}}%'

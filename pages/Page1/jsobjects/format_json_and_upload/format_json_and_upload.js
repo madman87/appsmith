@@ -30,7 +30,7 @@ export default {
             });
         }));
 
-        // Execute read_db after processing all inserts
+        // Execute read db after processing all inserts
         await Select_public_app1.run();
         showAlert("Upload finished!");
 
