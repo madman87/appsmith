@@ -22,6 +22,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "onFilterUpdate"
+    },
+    {
+      "key": "onOptionChange"
     }
   ],
   "isDisabled": false,
@@ -46,6 +49,7 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "onFilterUpdate": "{{\n            Select_public_app2.run();\n            \n          }}",
+  "onOptionChange": "{{filter_multiselect.getTable();}}",
   "optionLabel": "key",
   "optionValue": "key",
   "parentColumnSpace": 16.78125,

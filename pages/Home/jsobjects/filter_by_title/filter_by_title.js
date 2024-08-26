@@ -1,6 +1,7 @@
 export default {
   async getTable() {
     try {
+			
       // Ensure search_title.text is defined, and use an empty string if it is not
       const searchText = search_title?.text?.toLowerCase() || '';
 

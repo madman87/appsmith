@@ -30,8 +30,9 @@ export default {
                     await insert_data.run(processedObject);
                     console.log("Successfully inserted", processedObject);
                 } catch (e) {
-									// showAlert(`insertError for ${processedObject}`, insertError)
+                    // showAlert(`insertError for ${processedObject}`, insertError)
                     console.error("Insert failed for:", processedObject, e);
+                    showAlert(`data insert failed ${e.message}`)
                     //throw insertError; // Throw error to exit if insert fails
                 }
 
@@ -39,21 +40,21 @@ export default {
             }));
 
             // Execute read db after processing all inserts
-					try{
-            await Select_public_app1.run();
-            showAlert("Upload finished!");
-						
-					}catch(e){
-						console.log("test",e)
-						await read_db.data
-					}
+            try {
+                await Select_public_app1.run();
+                showAlert("Upload finished!");
+
+            } catch (e) {
+                console.log("test", e)
+                await read_db.data
+            }
 
             return processedData;
 
         } catch (e) {
             console.error("Error in transform function:", e);
             showAlert("An error occurred during upload.", "error");
-						await Select_public_app1.run();
+            await Select_public_app1.run();
             return [];
         }
     }

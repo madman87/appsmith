@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_94be28f3-9b8a-447e-aa15-65efd01fb622",
+  "id": "Home_reset_filters",
+  "unpublishedCollection": {
+    "name": "reset_filters",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

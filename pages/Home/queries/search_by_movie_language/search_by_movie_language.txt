@@ -1,0 +1,1 @@
+SELECT * FROM public.app a WHERE spoken_languages ILIKE {{ "%" + sel_lang.selectedOptionLabel + "%"}};

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_d0b0c251-a750-4b97-a626-5e9dbd4566f3",
+  "id": "Home_filter_multiselect",
+  "unpublishedCollection": {
+    "name": "filter_multiselect",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

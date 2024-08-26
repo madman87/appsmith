@@ -1,24 +1,29 @@
 export default {
   async getTable() {
     try {
-      // Run the database read operation
-      await Select_public_app1.run();
+      // Disable other filter searches
+      search_title.setValue("");
+      MultiSelect1.setSelectedOptions("");
 
-      // Convert the selected language option to lowercase for case-insensitive comparison
-      const searchText = sel_lang.selectedOptionValue.toLowerCase();
-      console.log("Selected language:", searchText);
+      // Run the database search operation
+      await search_by_movie_language.run();
 
-      // Filter Table1.tableData based on the selected language
-      const filteredData = Table1.tableData.filter(item => {
-        // Convert item spoken languages to lowercase for case-insensitive comparison
-        const languages = item.spoken_languages.toLowerCase();
-
-        // Check if the selected language is included in the item's spoken languages
-        return languages.includes(searchText);
+      // Ensure a valid language is selected before proceeding
+      const selectedLanguage = sel_lang.selectedOptionValue.toLowerCase();
+      if (!selectedLanguage) {
+				Select_public_app1.run()
+        showAlert("Please select a language.", "warning");
+        return;
+      }
+      // Filter movie data based on the selected language
+      const filteredData = search_by_movie_language.data.filter(item => {
+        // Ensure spoken_languages is available and convert to lowercase
+        const languages = item.spoken_languages?.toLowerCase() || "";
+        return languages.includes(selectedLanguage);
       });
 
-      // Log the filtered data to the console
-      console.log("Filtered data:", filteredData);
+      // Alert the user with the count of matching results
+      showAlert(`Found ${filteredData.length} matching result(s)`);
 
       // Update Table1 with the filtered data
       Table1.setData(filteredData);
@@ -26,8 +31,8 @@ export default {
       // Return the filtered data
       return filteredData;
     } catch (error) {
-      // Log a more descriptive error message
-      console.error("An error occurred while getting the table data:", error.message);
+      // Provide a more descriptive error message
+      console.error("Error while fetching table data:", error);
     }
   }
 };

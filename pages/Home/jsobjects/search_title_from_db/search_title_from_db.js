@@ -1,6 +1,11 @@
 export default {
   async searchTitle() {
     try {
+			
+			//disabling other filter searches
+			sel_lang.setSelectedOption('')
+			MultiSelect1.setSelectedOptions("")
+			
 			console.log("searching db for title",search_title.text)
       await search_title_query.run()
 			
