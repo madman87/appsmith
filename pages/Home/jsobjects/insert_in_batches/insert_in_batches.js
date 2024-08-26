@@ -21,6 +21,9 @@ export default {
                             // Date validation and formatting
                             if (moment(value, 'DD/MM/YYYY', true).isValid()) {
                                 value = moment(value, 'DD/MM/YYYY').format('YYYY-MM-DD');
+                            } else if (value.trim() === '') {
+                                // Set empty date to today's date
+                                value = moment().format('YYYY-MM-DD');
                             }
                         }
                         return [key, value];
@@ -29,12 +32,12 @@ export default {
 
                 batchData.push(processedObject);
 
-                // If batchData has 10 items or if it's the last iteration
-                if (batchData.length === 10 || i === filesData.length - 1) {
+                // If batchData has 500 items or if it's the last iteration
+                if (batchData.length === 500 || i === filesData.length - 1) {
                     try {
                         // Insert data in bulk
-											console.log("batchData",batchData)
-                        await insert_multiple_rows_at_once.run({batchData});
+                        console.log("batchData", batchData);
+                        await insert_multiple_rows_at_once.run({ batchData });
                         console.log("Successfully inserted batch", batchData);
                     } catch (e) {
                         console.error("Batch insert failed for:", batchData, e);
