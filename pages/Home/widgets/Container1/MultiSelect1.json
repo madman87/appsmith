@@ -58,7 +58,7 @@
   "placeholderText": "Select Movie Genre",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 54,
   "serverSideFiltering": true,
   "sourceData": "[\n  {\n    \"key\": \"Action\"\n  },\n  {\n    \"key\": \"Adventure\"\n  },\n  {\n    \"key\": \"Comedy\"\n  },\n  {\n    \"key\": \"Crime\"\n  },\n  {\n    \"key\": \"Drama\"\n  },\n  {\n    \"key\": \"Fantasy\"\n  },\n  {\n    \"key\": \"Horror\"\n  },\n  {\n    \"key\": \"Romance\"\n  },\n  {\n    \"key\": \"Science Fiction\"\n  },\n  {\n    \"key\": \"Thriller\"\n  },\n  {\n    \"key\": \"Western\"\n  }\n]\n",
   "topRow": 0,

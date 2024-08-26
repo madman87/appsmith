@@ -1,8 +1,8 @@
 {
   "gitSyncId": "66caf0c06df6cc55d47776cf_94be28f3-9b8a-447e-aa15-65efd01fb622",
-  "id": "Home_reset_filters",
+  "id": "Home_reset_filters_on_custom",
   "unpublishedCollection": {
-    "name": "reset_filters",
+    "name": "reset_filters_on_custom",
     "pageId": "Home",
     "pluginId": "js-plugin",
     "pluginType": "JS",
