@@ -7,14 +7,14 @@ export default {
 			search_title.setValue("")
 			sel_lang.setSelectedOption('')
 			
-			await Select_public_app1.run()
+			await search_db_for_genres.run()
 			
 // Convert selected option values to lowercase for case-insensitive comparison
 const searchText = MultiSelect1.selectedOptionValues.map(option => option.toLowerCase());
 console.log("selectedOptionValues", searchText);
 
 // Filter Table1.tableData based on the "all" condition
-const filteredData = Table1.tableData.filter(item => {
+const filteredData = search_db_for_genres.data.filter(item => {
   // Convert item genres to lowercase for case-insensitive comparison
   const itemGenres = item.genres.toLowerCase();
 

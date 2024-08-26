@@ -1,6 +1,6 @@
 {
   "gitSyncId": "66caf0c06df6cc55d47776cf_4ebd46e6-7b8d-4cbe-86fc-7d24fdc5cf78",
-  "id": "Home_Select_public_app2",
+  "id": "Home_search_db_for_genres",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Select_public_app2",
+    "name": "search_db_for_genres",
     "pageId": "Home",
     "userSetOnLoad": false
   }

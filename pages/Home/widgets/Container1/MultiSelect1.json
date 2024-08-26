@@ -48,7 +48,7 @@
   "mobileRightColumn": 52,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onFilterUpdate": "{{\n            Select_public_app2.run();\n            \n          }}",
+  "onFilterUpdate": "",
   "onOptionChange": "{{filter_multiselect.getTable();}}",
   "optionLabel": "key",
   "optionValue": "key",
