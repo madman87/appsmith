@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "Select_public_app1",
     "pageId": "Home",
     "userSetOnLoad": false

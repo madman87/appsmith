@@ -9,6 +9,7 @@ export default {
 			// }
 			
       console.log("data",search_title_query.data);
+			Table1.setData(search_title_query.data)
 			
     } catch (error) {
       console.error("Error during searchTitle execution:", error);

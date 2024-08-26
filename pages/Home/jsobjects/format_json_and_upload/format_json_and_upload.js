@@ -42,6 +42,7 @@ export default {
 					try{
             await Select_public_app1.run();
             showAlert("Upload finished!");
+						
 					}catch(e){
 						console.log("test",e)
 						await read_db.data

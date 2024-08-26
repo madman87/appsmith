@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 131,
+  "bottomRow": 127,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -174,6 +174,9 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicTriggerPathList": [
@@ -217,8 +220,8 @@
   "onPageChange": "{{\n            Select_public_app1.run();\n            Total_record_public_app1.run()\n          }}",
   "onSearchTextChanged": "{{\n            Select_public_app1.run();\n            Total_record_public_app1.run()\n          }}",
   "onSort": "{{\n            Select_public_app1.run();\n            Total_record_public_app1.run()\n          }}",
-  "originalBottomRow": 131,
-  "originalTopRow": 16,
+  "originalBottomRow": 127,
+  "originalTopRow": 10,
   "parentColumnSpace": 16.78125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -1057,9 +1060,9 @@
   "searchKey": "",
   "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{search_title_query.data}}",
+  "tableData": "{{Select_public_app1.data}}",
   "textSize": "0.875rem",
-  "topRow": 16,
+  "topRow": 10,
   "totalRecordsCount": "{{Total_record_public_app1.data[0].count}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
