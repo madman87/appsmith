@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "66caf0c06df6cc55d47776cf_046b09d4-c97f-4299-b306-b1831908730d",
-  "id": "Home_reset_filters.myFun2",
+  "gitSyncId": "66caf0c06df6cc55d47776cf_3f75e33c-c999-40f2-90f3-2746bcdfea98",
+  "id": "Home_reset_filters.reset",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -10,7 +10,6 @@
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
-    "clientSideExecution": true,
     "collectionId": "Home_reset_filters",
     "confirmBeforeExecute": false,
     "datasource": {
@@ -24,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "reset_filters.myFun2",
-    "name": "myFun2",
+    "fullyQualifiedName": "reset_filters.reset",
+    "name": "reset",
     "pageId": "Home",
     "userSetOnLoad": false
   }
