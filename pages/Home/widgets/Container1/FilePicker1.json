@@ -37,7 +37,7 @@
   "mobileRightColumn": 30,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onFilesSelected": "{{format_json_and_upload.transform();}}",
+  "onFilesSelected": "{{insert_in_batches.transform();}}",
   "originalBottomRow": 27,
   "originalTopRow": 23,
   "parentColumnSpace": 16.78125,

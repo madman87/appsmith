@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_4a0383b1-4139-4fc4-896c-fd2cbac80758",
+  "id": "Home_insert_in_batches",
+  "unpublishedCollection": {
+    "name": "insert_in_batches",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

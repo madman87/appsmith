@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS app (
+    id INTEGER PRIMARY KEY, -- Added primary key
+    title TEXT,
+    vote_average FLOAT,
+    vote_count INTEGER,
+    status TEXT,
+    release_date DATE,
+    revenue BIGINT,
+    runtime INTEGER,
+    adult BOOLEAN,
+    budget INTEGER,
+    homepage TEXT, 
+    imdb_id TEXT, -- IMDB ID field
+    original_language TEXT, -- Original language field
+    original_title TEXT, -- Original title field
+    overview TEXT, -- Overview field
+    popularity TEXT, -- Popularity field
+    poster_path TEXT, -- Poster path field
+    tagline TEXT, -- Tagline field
+    genres TEXT, -- Genres field (storing as TEXT)
+    production_companies TEXT, -- Production companies field (storing as TEXT)
+    production_countries TEXT, -- Production countries field (storing as TEXT)
+    spoken_languages TEXT, -- Spoken languages field (storing as TEXT)
+    keywords TEXT -- Keywords field (storing as TEXT)
+);
+
+-- Assuming `{{this.params.batchData}}` contains a JSON array of objects
+INSERT INTO app (
+    id, title, vote_average, vote_count, status, release_date, revenue,
+    runtime, adult, budget, homepage, imdb_id, original_language,
+    original_title, overview, popularity, poster_path, tagline,
+    genres, production_companies, production_countries, spoken_languages,
+    keywords
+)
+SELECT
+    (jsonb_each.value->>'id')::INTEGER,
+    jsonb_each.value->>'title',
+    (jsonb_each.value->>'vote_average')::FLOAT,
+    (jsonb_each.value->>'vote_count')::INTEGER,
+    jsonb_each.value->>'status',
+    (jsonb_each.value->>'release_date')::DATE,
+    (jsonb_each.value->>'revenue')::BIGINT,
+    (jsonb_each.value->>'runtime')::INTEGER,
+    (jsonb_each.value->>'adult')::BOOLEAN,
+    (jsonb_each.value->>'budget')::INTEGER,
+    jsonb_each.value->>'homepage',
+    jsonb_each.value->>'imdb_id',
+    jsonb_each.value->>'original_language',
+    jsonb_each.value->>'original_title',
+    jsonb_each.value->>'overview',
+    jsonb_each.value->>'popularity',
+    jsonb_each.value->>'poster_path',
+    jsonb_each.value->>'tagline',
+    jsonb_each.value->>'genres',
+    jsonb_each.value->>'production_companies',
+    jsonb_each.value->>'production_countries',
+    jsonb_each.value->>'spoken_languages',
+    jsonb_each.value->>'keywords'
+FROM jsonb_array_elements('{{this.params.batchData}}'::jsonb) AS jsonb_each(value);
+
