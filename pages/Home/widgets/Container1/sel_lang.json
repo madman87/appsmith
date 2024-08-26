@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 10,
+  "bottomRow": 4,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -19,7 +19,11 @@
       "key": "sourceData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
@@ -28,11 +32,11 @@
   "key": "vmnzulsu0r",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Select Movie Language",
+  "labelText": "",
   "labelTextSize": "0.875rem",
   "labelTooltip": "Select One Movie Language",
   "labelWidth": 5,
-  "leftColumn": 19,
+  "leftColumn": 23,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -41,20 +45,21 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
+  "onOptionChange": "{{filter_by_lang.getTable();}}",
   "optionLabel": "key",
   "optionValue": "key",
   "parentColumnSpace": 16.78125,
-  "parentId": "0",
+  "parentId": "w021wyh6sm",
   "parentRowSpace": 10,
-  "placeholderText": "Select option",
+  "placeholderText": "Select Movie Language",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 38,
   "serverSideFiltering": false,
   "sourceData": "[\n{\n    \"key\": \"English\"\n  },\n\t{\n    \"key\": \"French\"\n  },\n\t{\n    \"key\": \"Spanish\"\n  },\n\t{\n    \"key\": \"Xhosa\"\n  },\n\t{\n    \"key\": \"Mandarin\"\n  },\n\t{\n    \"key\": \"Persian\"\n  },\n\t{\n    \"key\": \"German\"\n  },\n\t{\n    \"key\": \"Russian\"\n  },\n\t{\n    \"key\": \"Korean\"\n  },\n\t{\n    \"key\": \"Italian\"\n  }\n]",
-  "topRow": 3,
+  "topRow": 0,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "dk72cllv00",
-  "widgetName": "Select1"
+  "widgetName": "sel_lang"
 }
