@@ -18,7 +18,7 @@
   "icon": "money",
   "pages": [
     {
-      "id": "Page1",
+      "id": "Home",
       "isDefault": true
     }
   ],

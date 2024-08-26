@@ -1,0 +1,53 @@
+{
+  "allowedFileTypes": [],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTyping": true,
+  "fileDataType": "Array",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "7vlw57hiwo",
+  "label": "Upload CSV/JSON",
+  "leftColumn": 54,
+  "maxFileSize": 5,
+  "maxNumFiles": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 30,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "onFilesSelected": "{{format_json_and_upload.transform();}}",
+  "parentColumnSpace": 16.78125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "selectedFiles": [],
+  "topRow": 1,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "d3h2p0b29l",
+  "widgetName": "FilePicker1"
+}

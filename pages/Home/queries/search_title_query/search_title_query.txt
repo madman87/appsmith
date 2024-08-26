@@ -1,0 +1,1 @@
+SELECT * FROM public.app a WHERE title ILIKE {{ "%" + search_title.text + "%"}};
