@@ -1,0 +1,64 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 52,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{\n  \"tips\": [\n    \"Pass data to this widget in the default model field\",\n    \"Access data in the javascript file using the appsmith.model variable\",\n    \"Create events in the widget and trigger them in the javascript file using appsmith.triggerEvent('eventName')\",\n    \"Access data in CSS as var(--appsmith-model-{property-name})\"\n  ]\n}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "3u4q46j4tc",
+  "leftColumn": 9,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 52,
+  "mobileLeftColumn": 9,
+  "mobileRightColumn": 32,
+  "mobileTopRow": 22,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 16.78125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 53,
+  "srcDoc": {
+    "css": ".app {\n  width: calc(1px * var(--appsmith-ui-width));\n  justify-content: center;\n  border-radius: 0px;\n  border: none;\n}\n.app .tip-container {\n  margin-bottom: 20px;\n}\n.app .tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n.app .tip-container .tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n}\n.app .tip-container .tip-header div {\n  color: #999;\n}\n.app .button-container {\n  text-align: right;\n}\n.app .button-container button {\n  margin: 0 10px;\n  border-radius: var(--appsmith-theme-borderRadius) !important;\n}\n.app .button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n}\n.app .button-container button.reset:not([disabled]) {\n  color: var(--appsmith-theme-primaryColor) !important;\n  border-color: var(--appsmith-theme-primaryColor) !important;\n}",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<script src=\"https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js\"></script>\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Auth0 Authentication Example</title>\n</head>\n<body>\n  <h1>Auth0 Authentication Demo</h1>\n\n  <!-- Login and Logout Buttons -->\n  <button id=\"login\">Login</button>\n  <button id=\"logout\" style=\"display:none;\">Logout</button>\n\n  <!-- Profile Section -->\n  <div id=\"profile\" style=\"display:none;\">\n    <!-- User profile information will be displayed here after login -->\n  </div>\n\n  <!-- Auth0 Script -->\n  <script src=\"https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js\"></script>\n  <!-- External JavaScript File -->\n  <script src=\"app.js\"></script>\n</body>\n</html>\n",
+    "js": "appsmith.onReady(() => {\n  console.log(\"start\");\n  auth0.createAuth0Client({\n    domain: \"fitnessbuddy.us.auth0.com\",\n    clientId: \"S2Llk4Mp706Oo7IqxkFr2ApoA3gjniF1\",\n    authorizationParams: {\n      redirect_uri: \"https://app.appsmith.com/app/moviedb/home-66cc6eb79ab5856c9cae4cad\"\n    }\n  }).then(async auth0Client => {\n    const loginButton = document.getElementById(\"login\");\n    console.log(loginButton);\n    const logoutButton = document.getElementById(\"logout\");\n    const profileElement = document.getElementById(\"profile\");\n    loginButton.addEventListener(\"click\", e => {\n      e.preventDefault();\n      console.log(\"login\");\n      auth0Client.loginWithRedirect();\n    });\n    if (location.search.includes(\"state=\") && (location.search.includes(\"code=\") || location.search.includes(\"error=\"))) {\n      await auth0Client.handleRedirectCallback();\n      window.history.replaceState({}, document.title, \"/\");\n    }\n    logoutButton.addEventListener(\"click\", e => {\n      e.preventDefault();\n      auth0Client.logout();\n    });\n    const isAuthenticated = await auth0Client.isAuthenticated();\n    const userProfile = await auth0Client.getUser();\n    if (isAuthenticated) {\n      profileElement.style.display = \"block\";\n      profileElement.innerHTML = `\n      <p>${userProfile.name}</p>\n      <img src=\"${userProfile.picture}\" alt=\"User Profile Picture\" />\n    `;\n      loginButton.style.display = \"none\";\n      logoutButton.style.display = \"block\";\n    } else {\n      profileElement.style.display = \"none\";\n      loginButton.style.display = \"block\";\n      logoutButton.style.display = \"none\";\n    }\n  });\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 22,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n  width: calc(1px * var(--appsmith-ui-width));\n  justify-content: center;\n  border-radius: 0px;\n  border: none;\n  \n  .tip-container {\n    margin-bottom: 20px;\n\n    h2 {\n      margin-bottom: 20px;\n      font-size: 16px;\n      font-weight: 700;\n    }\n\n    .tip-header {\n      display: flex;\n      justify-content: space-between;\n      align-items: baseline;\n\n      div {\n        color: #999;\n      }\n    }\n  }\n\t\n\t.button-container {\n      text-align: right;\n\n      button {\n        margin: 0 10px;\n        border-radius: var(--appsmith-theme-borderRadius) !important;\n\n        &.primary {\n          background: var(--appsmith-theme-primaryColor) !important;\n        }\n\n        &.reset:not([disabled]) {\n          color: var(--appsmith-theme-primaryColor) !important;\n          border-color: var(--appsmith-theme-primaryColor) !important;\n        }\n      }\n    }\n}\n",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<script src=\"https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js\"></script>\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Auth0 Authentication Example</title>\n</head>\n<body>\n  <h1>Auth0 Authentication Demo</h1>\n\n  <!-- Login and Logout Buttons -->\n  <button id=\"login\">Login</button>\n  <button id=\"logout\" style=\"display:none;\">Logout</button>\n\n  <!-- Profile Section -->\n  <div id=\"profile\" style=\"display:none;\">\n    <!-- User profile information will be displayed here after login -->\n  </div>\n\n  <!-- Auth0 Script -->\n  <script src=\"https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js\"></script>\n  <!-- External JavaScript File -->\n  <script src=\"app.js\"></script>\n</body>\n</html>\n",
+    "js": "appsmith.onReady(() => {\n\tconsole.log(\"start\")\n\t\n\tauth0.createAuth0Client({\n  domain: \"fitnessbuddy.us.auth0.com\",\n  clientId: \"S2Llk4Mp706Oo7IqxkFr2ApoA3gjniF1\",\n  authorizationParams: {\n    redirect_uri: \"https://app.appsmith.com/app/moviedb/home-66cc6eb79ab5856c9cae4cad\"\n  }\n\t\t\n}).then(async (auth0Client) => {\n  const loginButton = document.getElementById(\"login\");\n\t\tconsole.log(loginButton)\n  const logoutButton = document.getElementById(\"logout\");\n  const profileElement = document.getElementById(\"profile\");\n\n  loginButton.addEventListener(\"click\", (e) => {\n    e.preventDefault();\n    console.log(\"login\");\n    auth0Client.loginWithRedirect();\n  });\n\n  if (location.search.includes(\"state=\") &&\n      (location.search.includes(\"code=\") || location.search.includes(\"error=\"))) {\n    await auth0Client.handleRedirectCallback();\n    window.history.replaceState({}, document.title, \"/\");\n  }\n\n  logoutButton.addEventListener(\"click\", (e) => {\n    e.preventDefault();\n    auth0Client.logout();\n  });\n\n  const isAuthenticated = await auth0Client.isAuthenticated();\n  const userProfile = await auth0Client.getUser();\n\n  if (isAuthenticated) {\n    profileElement.style.display = \"block\";\n    profileElement.innerHTML = `\n      <p>${userProfile.name}</p>\n      <img src=\"${userProfile.picture}\" alt=\"User Profile Picture\" />\n    `;\n    loginButton.style.display = \"none\";\n    logoutButton.style.display = \"block\";\n  } else {\n    profileElement.style.display = \"none\";\n    loginButton.style.display = \"block\";\n    logoutButton.style.display = \"none\";\n  }\n});\n\n});"
+  },
+  "version": 1,
+  "widgetId": "l1qvzksxo2",
+  "widgetName": "Custom1"
+}

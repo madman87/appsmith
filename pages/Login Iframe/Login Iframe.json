@@ -1,7 +1,7 @@
 {
   "gitSyncId": "66caf0c06df6cc55d47776cf_8ccb332c-6593-4431-9116-6aa55677856b",
   "unpublishedPage": {
-    "isHidden": false,
+    "isHidden": true,
     "layouts": [
       {
         "dsl": {
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Login",
-    "slug": "login"
+    "name": "Login Iframe",
+    "slug": "login-iframe"
   }
 }

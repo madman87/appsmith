@@ -22,7 +22,11 @@
       "isDefault": true
     },
     {
-      "id": "Login",
+      "id": "Login Iframe",
+      "isDefault": false
+    },
+    {
+      "id": "Login CustomWidget",
       "isDefault": false
     }
   ],

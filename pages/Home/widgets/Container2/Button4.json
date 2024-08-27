@@ -41,7 +41,7 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Submit",
+  "text": "submit",
   "topRow": 0,
   "type": "BUTTON_WIDGET",
   "version": 1,

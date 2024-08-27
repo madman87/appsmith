@@ -13,7 +13,17 @@
       "key": "boxShadow"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSrcDocChanged"
+    },
+    {
+      "key": "onMessageReceived"
+    },
+    {
+      "key": "onURLChanged"
+    }
+  ],
   "flexVerticalAlignment": "start",
   "isLoading": false,
   "isVisible": true,
@@ -24,13 +34,16 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
+  "onMessageReceived": "{{iframe.iframe_response();}}",
+  "onSrcDocChanged": "{{iframe.iframe_response();}}",
+  "onURLChanged": "{{iframe.iframe_response();}}",
   "parentColumnSpace": 16.78125,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "source": "https://auth0.tradingbot.es/authorize?client_id=CJ2c41GE2tj0IKwzX4EiIpNaDqVBraQa&scope=openid+offline_access&redirect_uri=https://react.tradingbot.es&audience=https://tradingbot.es&response_type=code",
+  "source": "https://fitnessbuddy.us.auth0.com/authorize?client_id=S2Llk4Mp706Oo7IqxkFr2ApoA3gjniF1&scope=openid+offline_access&redirect_uri=https://app.appsmith.com/app/moviedb/home-66cc6eb79ab5856c9cae4cad&audience=https://fitnessbuddy.us.auth0.com/api/v2/&response_type=code",
   "topRow": 0,
   "type": "IFRAME_WIDGET",
   "version": 1,
