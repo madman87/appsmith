@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_1a8ad8c2-01b5-418d-84c7-7a0cb04d9d1f",
+  "id": "Home_add_row",
+  "unpublishedCollection": {
+    "name": "add_row",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

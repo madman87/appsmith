@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_7c2021b7-5d29-4ba6-a72b-eea145f5ec2f",
+  "id": "Home_get_all_db_data",
+  "unpublishedCollection": {
+    "name": "get_all_db_data",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

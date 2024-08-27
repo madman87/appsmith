@@ -26,6 +26,6 @@
     "executeOnLoad": false,
     "name": "read_db",
     "pageId": "Home",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

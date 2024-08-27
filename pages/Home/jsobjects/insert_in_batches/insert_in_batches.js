@@ -1,5 +1,7 @@
 export default {
     transform: async () => {
+        let processedData = [];
+
         try {
             const filesData = FilePicker1.files[0].data;
 
@@ -8,7 +10,6 @@ export default {
                 throw new Error("Invalid data format: filesData should be an array");
             }
 
-            const processedData = [];
             let batchData = [];
 
             for (let i = 0; i < filesData.length; i++) {
@@ -51,21 +52,21 @@ export default {
             }
 
             // Execute read db after processing all inserts
-            try {
-                await Select_public_app1.run();
-                showAlert("Upload finished!");
-            } catch (e) {
-                console.error("Error while reading from the database:", e);
-                await read_db.data;
-            }
-
-            return processedData;
+            await Select_public_app1.run();
+            showAlert("Upload finished!");
 
         } catch (e) {
             console.error("Error in transform function:", e);
             showAlert("An error occurred during upload.", "error");
-            await Select_public_app1.run();
-            return [];
+        } finally {
+            // Ensure read_db.run() is called at the very end
+            try {
+                await read_db.run();
+            } catch (e) {
+                console.error("Error running read_db:", e);
+            }
         }
+
+        return processedData;
     }
 };
