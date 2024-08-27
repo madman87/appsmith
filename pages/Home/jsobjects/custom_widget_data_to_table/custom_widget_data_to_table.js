@@ -14,9 +14,9 @@ export default {
       // For example, if fetching data or performing some async tasks
       // const result = await someAsyncFunction();
       
-			Table1.setData(Custom1.model.data);
+			Table1.setData(Custom1.model.filteredata);
 
-      return Custom1.model.data;
+      return Custom1.model.filteredata;
     } catch (error) {
       // Handle errors if necessary
       console.error('Error in Custom1onchange:', error);
