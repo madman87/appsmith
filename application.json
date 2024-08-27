@@ -20,6 +20,10 @@
     {
       "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "Login",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
