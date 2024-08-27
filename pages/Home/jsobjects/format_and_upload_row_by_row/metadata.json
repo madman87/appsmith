@@ -1,8 +1,8 @@
 {
   "gitSyncId": "66caf0c06df6cc55d47776cf_8cc69d79-27a0-4e01-a048-e6a62497b210",
-  "id": "Home_format_json_and_upload",
+  "id": "Home_format_and_upload_row_by_row",
   "unpublishedCollection": {
-    "name": "format_json_and_upload",
+    "name": "format_and_upload_row_by_row",
     "pageId": "Home",
     "pluginId": "js-plugin",
     "pluginType": "JS",
