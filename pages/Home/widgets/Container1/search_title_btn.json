@@ -31,7 +31,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{search_title_from_db.searchTitle();}}",
+  "onClick": "{{filter_by_title.searchTitle();}}",
   "parentColumnSpace": 3.93310546875,
   "parentId": "w021wyh6sm",
   "parentRowSpace": 10,

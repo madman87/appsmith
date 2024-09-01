@@ -1,4 +1,4 @@
-SELECT * FROM public.app;
+SELECT * FROM public.app LIMIT 5000;
 
 
 

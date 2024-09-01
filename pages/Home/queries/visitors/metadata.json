@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "66caf0c06df6cc55d47776cf_4ebd46e6-7b8d-4cbe-86fc-7d24fdc5cf78",
-  "id": "Home_search_db_for_genres",
+  "gitSyncId": "66caf0c06df6cc55d47776cf_f3d3d019-0fd8-43f2-b6b0-08d0cf2a945e",
+  "id": "Home_visitors",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM app WHERE LOWER(genres) ~* '{{this.params.data}}';\n",
+      "body": "CREATE TABLE IF NOT EXISTS visitors (\n    id SERIAL PRIMARY KEY,\n    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    ip_address VARCHAR(45)\n);\n\nINSERT INTO visitors (time, ip_address) VALUES (DEFAULT, {{this.params.ip}});\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "search_db_for_genres",
+    "name": "visitors",
     "pageId": "Home",
     "userSetOnLoad": false
   }

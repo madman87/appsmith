@@ -1,6 +1,1 @@
-SELECT
-  *
-FROM
-  public.app
-WHERE
-  "genres" ilike '%{{MultiSelect1.filterText}}%'
+SELECT * FROM app WHERE LOWER(genres) ~* '{{this.params.data}}';

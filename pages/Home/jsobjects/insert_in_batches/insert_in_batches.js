@@ -10,14 +10,20 @@ export default {
                 throw new Error("Invalid data format: filesData should be an array");
             }
 
+            const totalItems = filesData.length;
+            const batchSize = Math.min(totalItems, 500); // Set max batch size to 500
             let batchData = [];
+            let lastAlert = 0; // To track the last percentage alert shown
 
-            for (let i = 0; i < filesData.length; i++) {
+            // Determine if alerts should be shown every 5%
+            const showDetailedAlerts = totalItems > 5000; // true or false 
+
+            for (let i = 0; i < totalItems; i++) {
                 // Process object properties
                 const processedObject = Object.fromEntries(
                     Object.entries(filesData[i]).map(([key, value]) => {
                         if (typeof value === 'string') {
-                            value = value.replace(/'/g, '');
+                            value = value.replace(/'/g, ''); //regex to replace single quotes with empty string
 
                             // Date validation and formatting
                             if (moment(value, 'DD/MM/YYYY', true).isValid()) {
@@ -33,16 +39,24 @@ export default {
 
                 batchData.push(processedObject);
 
-                // If batchData has 500 items or if it's the last iteration
-                if (batchData.length === 500 || i === filesData.length - 1) {
+                // Calculate progress percentage
+                const progress = Math.floor(((i + 1) / totalItems) * 100);
+
+                // Show alert for every 10% of progress if file has 5000 items or fewer
+                // Show alert for every 5% of progress if file has more than 5000 items
+                if ((showDetailedAlerts && progress >= lastAlert + 5) || (!showDetailedAlerts && progress >= lastAlert + 10)) {
+                    showAlert(`${progress}% of the file processed`);
+                    lastAlert = progress;
+                }
+
+                // If batchData has reached the batchSize or if it's the last iteration
+                if (batchData.length === batchSize || i === totalItems - 1) {
                     try {
                         // Insert data in bulk
-                        console.log("batchData", batchData);
+                        console.log("processing...", batchData);
                         await insert_multiple_rows_at_once.run({ batchData });
-                        console.log("Successfully inserted batch", batchData);
                     } catch (e) {
                         console.error("Batch insert failed for:", batchData, e);
-                        showAlert(`Batch insert failed: ${e.message}`);
                     }
 
                     // Store the processed batch and reset batchData

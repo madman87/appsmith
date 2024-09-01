@@ -1,7 +1,6 @@
 export default {
   async searchTitle() {
     try {
-			
 			//disabling other filter searches
 			sel_lang.setSelectedOption('')
 			MultiSelect1.setSelectedOptions("")

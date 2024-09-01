@@ -31,7 +31,7 @@
   "mobileRightColumn": 33,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onClick": "{{filter_multiselect.getTable();}}",
+  "onClick": "{{filter_multiselect.filter();}}",
   "parentColumnSpace": 16.46875,
   "parentId": "w021wyh6sm",
   "parentRowSpace": 10,

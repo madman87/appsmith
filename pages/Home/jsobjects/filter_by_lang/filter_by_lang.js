@@ -1,5 +1,5 @@
 export default {
-  async getTable() {
+  async filter_by_lang() {
     try {
       // Disable other filter searches
       search_title.setValue("");
@@ -7,21 +7,8 @@ export default {
 
       // Run the database search operation
       await search_by_movie_language.run();
-
-      // Ensure a valid language is selected before proceeding
-      const selectedLanguage = sel_lang.selectedOptionValue.toLowerCase();
-      if (!selectedLanguage) {
-				Select_public_app1.run()
-        showAlert("Please select a language.", "warning");
-        return;
-      }
-      // Filter movie data based on the selected language
-      const filteredData = search_by_movie_language.data.filter(item => {
-        // Ensure spoken_languages is available and convert to lowercase
-        const languages = item.spoken_languages?.toLowerCase() || "";
-        return languages.includes(selectedLanguage);
-      });
-
+			
+			const filteredData = search_by_movie_language.data
       // Alert the user with the count of matching results
       showAlert(`Found ${filteredData.length} matching result(s)`);
 

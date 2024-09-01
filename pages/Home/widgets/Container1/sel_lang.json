@@ -45,7 +45,7 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onOptionChange": "{{filter_by_lang.getTable();}}",
+  "onOptionChange": "{{filter_by_lang.filter_by_lang();}}",
   "optionLabel": "key",
   "optionValue": "key",
   "parentColumnSpace": 16.78125,
