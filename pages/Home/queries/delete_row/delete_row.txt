@@ -1,0 +1,2 @@
+DELETE FROM app 
+WHERE id = {{Table1.triggeredRow.id}}; 

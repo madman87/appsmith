@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66caf0c06df6cc55d47776cf_db14989b-4c8d-4df4-8bce-f615cb1f8009",
+  "id": "Home_del_row",
+  "unpublishedCollection": {
+    "name": "del_row",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
